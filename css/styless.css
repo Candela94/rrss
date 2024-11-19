@@ -14,20 +14,18 @@
 
 .Body{
    
-
-
     display: flex;
     flex-direction: column;
-
+    height: 100vh;
 }
-
-
 
 
 
 
 .Header{
     padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* aqui, las dos primeras es la ubicacion de la sombra, y la de 5px es la iluminación (blur) */
     
 }
 
@@ -37,18 +35,24 @@ h1{
 
 
 .Main{
-    height: 100vh;
+    
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    
    
 }
 
 
 .Icons{
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-    align-content: center;
+   display: flex;
+   gap: 32px;
+   flex-wrap: wrap;
+    
 
 }
 
@@ -60,21 +64,152 @@ h1{
 
 }
 
-.Footer{
-    display: flex;
-    position: fixed;
-    justify-content: end;
-    gap: 24px;
-    padding: 2rem;
-    bottom: 0;
+
+
+
+
+/* 
+/* ------------------------------------------------
+              
+                    Variables
+                
+---------------------------------------------------*/ 
+
+
+:root{
+
+--bg-primary: #f1f1f1;
+--bg-secondary:#f0f0f0;
+--txt-primary: #000;
+--txt-secondary:#222;
+
+
+--box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+
 }
 
-.Footer-button{
+
+
+
+
+/* ------------------------------------------------
+              
+                    Controllers
+                
+---------------------------------------------------*/
+
+
+
+.Footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+   right: 10px;
+    
+    /* justify-content: end; */
+    gap: 24px;
+    padding: 2rem;
+    
+}
+
+.button {
     font-family: poppins;
     padding: 1rem;
-    background-color: rgb(227, 222, 222);
+    background: var(--bg-primary);
+    color: var(--txt-primary);
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
+    box-shadow: var(--box-shadow);
+
+    min-width: 100px;
+    cursor: pointer;
+
     
+}
+
+.button--i {
+
+
+}
+
+
+
+
+/* ------------------------------------------------ 
+                    Controllers
+---------------------------------------------------*/
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------- 
+                    Clases reutilizables/utilities
+----------------------------------------------------------*/
+
+
+
+
+.-u-bgPrimary {
+
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+
+}
+
+
+.-u-bgSecondary {
+
+    background-color: var(--bg-secondary);
+    transition: background-color 0.3s ease;
+
+}
+
+.-u-txtPrimary {
+
+    color: var(--txt-primary);
+    transition: color 0.3s ease;
+}
+
+.u-txtSecondary {
+    color: var(--txt-secondary);
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+
+.u-Dark {
+
+--bg-primary: #2f2e2e;
+--bg-secondary:#342f2f;
+--txt-primary: #ffffff;
+--txt-secondary:#d7d7d7;
+
+
+--box-shadow: 1px 1px 5px rgba(255,255,255,0.5);
+
+
+}
+
+
+
+/* modo row o columna  */
+
+
+
+.u-flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.u-flexRow {
+    display: flex;
+    flex-direction: row;
 }
 

@@ -1,0 +1,350 @@
+/* Hay distintos formatos::after
+/* formato en el que esta creada la fuente */
+
+/* - ttf: truetype:
+-otf: opentype
+-woff:woff
+-woof2: woof2 */
+
+
+
+
+@font-face {
+
+    /* nombre de fuente personalizado por mi  */
+    font-family: "Cartoon";
+    src: url(../fonts/CartoonCheck-Black.ttf) format(truetype);
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: poppins;
+}
+
+
+/* las utilities indican algo, suelen tener una sola regla o dos internas porque quieren aplicar un unico estilo (color, por ejemplo) */
+.u-txtCartoon {
+    font-family: Cartoon;
+}
+
+
+
+
+/* -------------------------------------
+                    Variables
+                    
+---------------------------------------*/
+
+
+
+:root {
+    --fb-color: #4267b2;
+    --x-color: #000;
+    --tweet-color: #1da1f2;
+    --insta-color: #e1306c;
+    --lkdin-color: #2867b2;
+    --yt-color: #f00;
+    --lion-color: orange;
+}
+
+
+
+
+/* -------------------------------------
+            
+               colores de iconos
+                    
+---------------------------------------*/
+
+
+.IconBox--fb .IconBox-span,
+.IconBox--fb .IconBox-text {
+
+
+    color: var(--fb-color);
+    border-color: var(--fb-color);
+
+}
+
+
+
+.IconBox--x .IconBox-span,
+.IconBox--x .IconBox-text {
+
+
+    color: var(--x-color);
+    border-color: var(--x-color);
+
+}
+
+
+
+
+.IconBox--insta .IconBox-span,
+.IconBox--insta .IconBox-text {
+
+
+    color: var(--insta-color);
+    border-color: var(---insta-color);
+
+}
+
+
+
+
+
+
+
+.IconBox--lkdin .IconBox-span,
+.IconBox--lkdin .IconBox-text {
+
+
+    color: var(--fb-color);
+    border-color: var(--fb-color);
+
+}
+
+
+
+
+
+
+.IconBox--yt .IconBox-span,
+.IconBox--yt .IconBox-text {
+
+
+    color: var(--yt-color);
+    border-color: var(--yt-color);
+
+}
+
+
+
+
+
+
+.IconBox--lion .IconBox-span,
+.IconBox--lion .IconBox-text {
+
+
+    color: var(--lion-color);
+    border-color: var(--lion-color);
+
+}
+
+
+
+
+.IconBox-link {
+    position: relative;
+    text-decoration: none;
+    margin: 0 25px;
+    display: block;
+
+}
+
+.IconBox-layers {
+
+    width: 55px;
+    height: 55px;
+
+
+    /* skew deforma el elemento */
+    transition: transform 0.5s ease;
+}
+
+
+.IconBox:hover .IconBox-layers {
+
+    transform: rotate(-35deg) skew(20deg);
+
+}
+
+.IconBox-span {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+
+    font-size: 30px;
+    text-align: center;
+    line-height: 55px;
+
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------
+     Layers de iconos 
+                    
+---------------------------------------*/
+
+/* hay una opcion que es nth-child(even) que coge las cajas pares o impares. Odd es impar, even es impar */
+.IconBox:hover .IconBox-span:nth-child(1) {
+
+    opacity: 0.2;
+
+}
+
+
+.IconBox:hover .IconBox-span:nth-child(2) {
+
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+
+
+}
+
+
+.IconBox:hover .IconBox-span:nth-child(3) {
+
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+
+
+}
+
+
+.IconBox:hover .IconBox-span:nth-child(4) {
+
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+
+
+}
+
+
+.IconBox:hover .IconBox-span:nth-child(5) {
+
+    opacity: 1;
+    transform: translate(20px, -20px);
+
+
+}
+
+/* sombras de cajas */
+
+
+.IconBox--fb:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--fb-color);
+
+}
+
+
+
+.IconBox--x:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--x-color);
+
+}
+
+
+
+.IconBox--insta:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--insta-color);
+
+}
+
+
+
+
+
+.IconBox--lkdin:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--lkdin-color);
+
+}
+
+
+
+
+
+
+.IconBox--yt:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--yt-color);
+
+}
+
+
+
+
+
+.IconBox--lion:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--lion-color);
+
+}
+
+
+
+
+
+.IconBox--fb:hover .IconBox-span {
+
+    box-shadow: -1px 1px 3px var(--fb-color);
+
+}
+
+
+
+
+.IconBox-text {
+
+/* lo vamos  a  hacer flotante, le sacamos la opacidad y lo movemos */
+
+position: absolute;
+left: 50%;
+font-weight: 500;
+bottom: -5px;
+transform: translate(-50%);
+opacity: 0;
+transition: bottom 0.5s ease, opacity 0.5s ease;
+
+
+}
+
+
+.IconBox{
+
+padding-bottom: 35px;
+
+}
+
+
+
+.IconBox:hover .IconBox-text {
+
+opacity: 1;
+bottom: -35px;
+
+}
+
+
+
+
+
+/* Fuente personalizada */
+
+.IconBox--lion .IconBox-span,
+.IconBox--lion .IconBox-text {
+
+
+    font-family: "Cartoon";
+    white-space: nowrap;
+    /* no agrega saltos de linea en los espacios */
+}
